@@ -507,24 +507,35 @@ var cards = [
 ];
 
 function drawcard(){
+    document.getElementById("card").hidden=false;
     var card = cards[Math.floor(Math.random()*cards.length)];
     document.getElementById("card-instruction").innerHTML = card["instruction"];
-    document.getElementById("card-note_top").innerHTML = card["note_top"];
+    if (card["note_top"]) {
+	document.getElementById("card-note_top").innerHTML = card["note_top"];
+	document.getElementById("card-note_top").hidden=false;
+    } else {
+	document.getElementById("card-note_top").hidden=true;
+    }
     if (card["image"]) {
 	var text = "<img src=\"data/" + card["image"] + "\">";
 	document.getElementById("card-body").innerHTML = text;
     } else {
 	document.getElementById("card-body").innerHTML = card["body"];
     }
-    document.getElementById("card-note_bottom").innerHTML = card["note_bottom"];
+    if (card["note_bottom"]) {
+	document.getElementById("card-note_bottom").innerHTML = card["note_bottom"];
+	document.getElementById("card-note_bottom").hidden=false;
+    } else {
+	document.getElementById("card-note_bottom").hidden=true;
+    }
     if (card["dices"]) {
 	var text = "dice rolls:  ";
-	for (i = 0; i < card["dices"]; i++) {
+	for (i = 0; i < card["dices"]; i++)
 	    text += roll_dice() + " "
-	}
 	document.getElementById("card-dices").innerHTML = text;
+	document.getElementById("card-dices").hidden=false;
     } else {
-	document.getElementById("card-dices").innerHTML = "";
+	document.getElementById("card-dices").hidden=true;
     }
 }
 
