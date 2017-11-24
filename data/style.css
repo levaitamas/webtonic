@@ -1,72 +1,85 @@
 body{
-    font-family:'Roboto',sans-serif;
-    background-color:#3d3d3d;
+    background:black;
+    color:black;
+    font-family:'Arvo',sans-serif;
+    font-size:1em;
+    text-align:center;
 }
 #header{
-    font-family:'Arvo',sans-serif;
-}
-#header h2{
     color:white;
-    font-size:300%;
-    text-align:center;
-    top:0px;
-    margin:0px;
+    font-size:3em;
+    padding:1em;
+}
+#drawbutton{
+    font-size:1.5em;
+    font-weight:bold;
+    cursor:pointer;
+    color:#000;
+    width:50%;
+    padding:0.5em;
+    margin-bottom:2em;
+    border:2px solid #ccc;
+    border-radius:1em;
+    box-shadow:none;
+}
+#drawbutton:hover{
+    cursor:pointer;
+    background:#00cc00;
+    color:#fff;
 }
 #card{
     margin-left:auto;
     margin-right:auto;
-    width:400px;
-    line-height:150%;
-    border:2px solid black;
-    border-radius:5px;
+    width:50%;
+    line-height:1.3em;
+    border:2px solid #ccc;
+    border-radius:1.5em;
     background-color:white;
+    padding:1em;
 }
 #card-instruction{
-    margin:15px 5px;
-    font-size:200%;
+    font-size:2em;
     font-weight:bold;
     text-align:left;
+    padding-bottom:0.5em;
 }
 #card-body{
-    padding-left:10px;
-    font-size:110%;
+    font-size:1.5em;
+    text-align:justify;
+    padding-left:1em;
+    padding-right:1em;
+    line-height:1.3em;
 }
 #card-note_top{
-    padding-right:10px;
-    font-size:90%;
+    font-size:1.3em;
     text-align:right;
+    min-height:1.5em;
 }
-
 #card-note_bottom{
-    padding-right:10px;
-    font-size:90%;
+    font-size:1.3em;
     text-align:right;
+    min-height:1.5em;
 }
-
 #card-dices{
-    padding-left:5px;
-    margin:5px;
     font-weight:bold;
+    padding-top:1em;
+    min-height:1.5em;
 }
-#button{
-    width:100%;
+#dice{
     text-align:center;
+    width:1.5em;
+    display:inline-block;
+    border:1px solid #ccc;
+    border-radius:0.5em;
 }
-#drawbutton:hover{
-    cursor:pointer;
-    background:#09c;
-    color:#fff;
+#menu{
+    color:white;
+    padding-top:1em;
 }
-#drawbutton{
-    cursor:pointer;
-    box-shadow:none;
-    border:0px;
-    color:#000;
-    width:400px;
-    padding:5px;
-    font-weight:bold;
-    font-size:120%;
-    font-family:inherit;
-    text-align:center;
-    margin-bottom:100px;
+button.astext {
+    color:white;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
 }

@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
     <meta charset="utf-8" />
     <link rel="stylesheet" href="data/style.css" />
-    <script type="text/javascript" src="data/tonic.js"></script>
+    <script type="text/javascript" src="data/game.js"></script>
+    <script type="text/javascript" src="data/menu.js"></script>
     <title>tonic</title>
-</head>
-<body>
-  <div id="header">
-    <h2>tonic<a href="https://tonicgame.com" target="_blank">.</a></h2>
-  </div>
-  <div id="button">
-    <button id="drawbutton" onclick="drawcard()" autofocus>Draw a card</button>
-  </div>
-  <div id="card" hidden=true>
-    <p id="card-instruction"></p>
-    <p id="card-note_top"></p>
-    <p id="card-body"></p>
-    <p id="card-note_bottom"></p>
-    <p id="card-dices"></p>
-  </div>
-</body>
+  </head>
+  <body>
+    <div id="header">
+      tonic<a href="https://tonicgame.com" target="_blank">.</a>
+    </div>
+    <div>
+      <button id="drawbutton" onclick="drawcard()" autofocus>draw a card</button>
+    </div>
+    <div id="card" hidden=true>
+      <div id="card-note_top"></div>
+      <div id="card-instruction"></div>
+      <div id="card-body"></div>
+      <div id="card-note_bottom"></div>
+      <div id="card-dices"></div>
+    </div>
+    <div id="menu">
+      <button class="astext" onclick="show_menu('help')">help</button>
+      |
+      <button class="astext" onclick="show_menu('glossary')">glossary</button>
+      |
+      <button class="astext" onclick="show_menu('rules')">rules</button>
+      |
+      <button class="astext" onclick="show_menu('faq')">faq</button>
+    </div>
+  </body>
 </html>
