@@ -76,10 +76,14 @@ body{
     color:white;
     padding-top:1em;
 }
-button.astext {
+button.astext{
     color:white;
     background:none;
     border:none;
     margin:0;
     padding:0;
+}
+button.astext:hover{
+    cursor:pointer;
+    color:#00cc00;
 }
