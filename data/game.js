@@ -1,4 +1,4 @@
-var dice = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
+var dice = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
 var cards = [
     {
 	"instruction": "use",
@@ -509,32 +509,34 @@ var cards = [
 function drawcard(){
     document.getElementById("card").hidden=false;
     var card = cards[Math.floor(Math.random()*cards.length)];
-    document.getElementById("card-instruction").innerHTML = card["instruction"];
-    if (card["note_top"]) {
-	document.getElementById("card-note_top").innerHTML = card["note_top"];
+    document.getElementById("card-instruction").innerHTML = card.instruction;
+    var text;
+    if(card.note_top) {
+	document.getElementById("card-note_top").innerHTML = card.note_top;
     } else {
-	document.getElementById("card-note_top").innerHTML = '';
+	document.getElementById("card-note_top").innerHTML = "";
     }
-    if (card["image"]) {
-	var text = "<img src=\"data/" + card["image"] + "\">";
+    if(card.image) {
+	text = "<img src=\"data/" + card.image + "\">";
 	document.getElementById("card-body").innerHTML = text;
 	document.getElementById("card-body").style.textAlign = "center";
     } else {
-	document.getElementById("card-body").innerHTML = card["body"];
+	document.getElementById("card-body").innerHTML = card.body;
 	document.getElementById("card-body").style.textAlign = "justify";
     }
-    if (card["note_bottom"]) {
-	document.getElementById("card-note_bottom").innerHTML = card["note_bottom"];
+    if(card.note_bottom) {
+	document.getElementById("card-note_bottom").innerHTML = card.note_bottom;
     } else {
-	document.getElementById("card-note_bottom").innerHTML = '';
+	document.getElementById("card-note_bottom").innerHTML = "";
     }
-    if (card["dices"]) {
-	var text = "notes: ";
-	for (i = 0; i < card["dices"]; i++)
-	    text += "<div id=\"dice\">" + roll_dice() + "</div> "
+    if(card.dices) {
+	text = "notes: ";
+	for(var i = 0; i < card.dices; i++) {
+	    text += "<div id=\"dice\">" + roll_dice() + "</div> ";
+	}
 	document.getElementById("card-dices").innerHTML = text;
     } else {
-	document.getElementById("card-dices").innerHTML = '';
+	document.getElementById("card-dices").innerHTML = "";
     }
 }
 

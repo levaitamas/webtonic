@@ -1,16 +1,18 @@
 function show_menu(option){
-    var content = { "title": "", "body": "" };
+    var content = {"title": "", "body": ""};
     var text = "";
-    if(option === "help") {
-	content["title"] = "how to use these cards";
-	content["body"] = "Improvisation is the most direct link between the music in your head and the music in your instrument. The purpose of Tonic is to strengthen that " +
+    switch(option) {
+    case "help":
+	content.title = "how to use these cards";
+	content.body = "Improvisation is the most direct link between the music in your head and the music in your instrument. The purpose of Tonic is to strengthen that " +
 	    "link. It does this by encouraging you to think unconventionally and playful about improvisation and about music, so that you can shed the anxiety and " +
 	    "the stress that commonly keep people from learning to improvise. My hope is that this allows you to relax more and trust your gut, and will help you " +
 	    "make better music.<hr style=\"height:0.2em; visibility:hidden;\">Tonic is a \"game\" only in the loosest sense of the word. There is no score, and " +
 	    "there is no object. The point is to have fun, relax, and make music. Your success should be measured by how free and fearless you feel when working " +
 	    "through these exercises. Print these cards on the heaviest weight paper you can find, and cut along the lines. Then just shuffle and go!";
-	text = content["body"];
-    } else if(option === "glossary") {
+	text = content.body;
+	break;
+    case "glossary":
 	content = {
 	    "title": "glossary of musical terms used in this game",
 	    "body": {
@@ -29,9 +31,11 @@ function show_menu(option){
 		"Octave": "refers to a note played at different locations on the instrument. i.e. “High C” and “Low C” are the same note, but in different octaves"
 	    }
 	};
-	for(var element in content['body'])
-	    text += "<b>" + element + "</b> - " + content['body'][element] +"<hr style=\"height:0.2em; visibility:hidden;\">";
-    } else if(option === "rules") {
+	for(var elem in content.body) {
+	    text += "<b>" + elem + "</b> - " + content.body[elem] + "<hr style=\"height:0.2em; visibility:hidden;\">";
+	}
+	break;
+    case "rules":
 	content = {
 	    "title": "rules",
 	    "body": {
@@ -48,11 +52,13 @@ function show_menu(option){
 		10:"Keep it simple. Let the notes breathe. If you don't understand the instructions, use your imagination to fill in the gaps."
 	    }
 	};
-	for(var element in content['body'])
-	    text += "<b>(" + element + ")</b> " + content['body'][element] +"<hr style=\"height:0.2em; visibility:hidden;\">";
-    } else if(option === "faq"){
-	content["title"] = "other questions";
-	content["body"] = "<b>Q: How do I improvise a piece with just one note?</b>" +
+	for(var elem in content.body) {
+	    text += "<b>(" + elem + ")</b> " + content.body[elem] + "<hr style=\"height:0.2em; visibility:hidden;\">";
+	}
+	break;
+    case "faq":
+	content.title = "other questions";
+	content.body = "<b>Q: How do I improvise a piece with just one note?</b>" +
 	    "<hr style=\"height:0.2em; visibility:hidden;\">" +
 	    "A: Try varying the tone and dynamics. Maybe pretend you're playing a percussive instrument. Or maybe you're creating a conversation " +
 	    "between two percussive instruments. If you have a string or wind instrument, try bending the note." +
@@ -64,11 +70,12 @@ function show_menu(option){
 	    "<a href=\"https://www.wikipedia.org\" target=\"_blank\">Wikipedia</a> and " +
 	    "<a href=\"https://www.reddit.com/r/musictheory/\" target=\"_blank\">reddit.com/r/musictheory</a> " +
 	    "are two amazingly helpful places to learn.";
-	text = content["body"];
-    } else { return -1; }
+	text = content.body;
+	break;
+    }
     document.getElementById("card").hidden=false;
     document.getElementById("card-note_top").innerHTML = "";
-    document.getElementById("card-instruction").innerHTML = content["title"] + "<hr style=\"height:0.05em; visibility:hidden;\">";
+    document.getElementById("card-instruction").innerHTML = content.title + "<hr style=\"height:0.05em; visibility:hidden;\">";
     document.getElementById("card-body").style.textAlign = "justify";
     document.getElementById("card-note_bottom").innerHTML = "";
     document.getElementById("card-dices").innerHTML = "";
