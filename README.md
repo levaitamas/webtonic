@@ -11,3 +11,7 @@ In order to ease offline usage, the page requires no external software component
 ### Instant
 
 Play it on the repository's [github page](https://levaitamas.github.io/webtonic/)!
+
+## License
+
+webtonic is a free software and licensed under [GPLv3+](LICENSE).
